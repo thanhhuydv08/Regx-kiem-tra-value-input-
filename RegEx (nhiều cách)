@@ -1,0 +1,9 @@
+ vd : tôi có 1 biến mã sinh viên theo chuẩn của 1 trường : ký tự đầu là hoa, ki tự 2 là số, kí tự 3 là số... mSV;
+cách 1 : 
+String s =textField.getText();
+				String mes ="Mã không hợp lệ";
+				if(s.matches("[A-Z][0-9][0-9]")){// [] mỗi 1 ngoặc tương ứng giá trị chart 0 truyền vào phải đúng theo chuẩn
+					mes = "Mã nhân viên phù hợp";
+					JOptionPane.showMessageDialog(frame,mes);
+				}
+cách 2 : dùng mô hình 3 lớp của  regEx : Parttern, macher, Exception
