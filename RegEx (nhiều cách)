@@ -22,6 +22,18 @@ cách 2 : dùng mô hình 3 lớp của  regEx : Parttern, macher, Exception
     // [a-f0-9_-]* ; // xuất hiện 0 đến n lần : o xuát hiện vẫn đúng
      //[a-f0-9_-]+  ;// xuất hiện 1 lần đến n lần : 0 xuất hiện là sai
      //[a-f0-9_-]?  ;// xuất hiện từ 0 hoặc 1 lần thôi > 2 => sai
+     
+     // String image ="[\S\.]+\.(?i)(jpg|png|gif|bmp)"
+     // mô tả : \S : các kí tự nhưng không chưa ki tư trắng 
+      //          \. : có thể có dấu chấm
+      //          + : lặp lại 1 lần hoặc n lần cái phía truốc nó
+      //          \. : dấu chấm
+      //         (?i): bỏ qua kí tự hoa thường để giới hạn đơn vị phía sau
+      //         (jpg|png|gif|bmp) : chỉ cho phép 1 đơn vị jpg, hoặc png
+      //
+      //
+      //
+      
      try {
 		Pattern pattern = Pattern.compile(regEx);
 		Matcher matcher = pattern.matcher(input);
