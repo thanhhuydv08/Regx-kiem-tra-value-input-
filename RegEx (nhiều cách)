@@ -7,12 +7,21 @@ String s =textField.getText();
 					JOptionPane.showMessageDialog(frame,mes);
 				}
 cách 2 : dùng mô hình 3 lớp của  regEx : Parttern, macher, Exception
-                  String input ="abc";
+      String input ="abc";
      String regEx ="abc";
      // các định dang của điều kiện regEx
      String regEx1 ="abc{3}";// yêu cầu text nhập vào là ki tự c xuất hiện 3 lần
      String regEx2 ="a(bc){3}";// yêu cầu text nhập vào là ki tự bc xuất hiện 3 lần
      String regEx3 ="a{3}bc";// yêu cầu text nhập vào là ki tự c xuất hiện 3 lần
+     String regEx4 ="abc{3}.";// phù hợp bất kì ký tự đơn nào vd abcd. abce.....
+     // ký tự đặt biệt phải dùng \\. hoặc \\d.....
+     String regEx5 ="abc{3}.[a-f]"; // xuất hiện ký tự đơn trong khoảng từ a đến f;
+     String regEx6 ="abc{3}.[a-f0-9_-]";// thì chỉ cho phép 1 ký tự trong đó 
+     String regEx7 ="[a-f0-9_-] {6,20}";// thì nội dung sẽ khác với regex là phải chứa trong khoảng 6 ký tự đến 20 ký tự
+     // vd tren hop le khi input = abcdef0-,abcdef, ....
+    // [a-f0-9_-]* ; // xuất hiện 0 đến n lần : o xuát hiện vẫn đúng
+     //[a-f0-9_-]+  ;// xuất hiện 1 lần đến n lần : 0 xuất hiện là sai
+     //[a-f0-9_-]?  ;// xuất hiện từ 0 hoặc 1 lần thôi > 2 => sai
      try {
 		Pattern pattern = Pattern.compile(regEx);
 		Matcher matcher = pattern.matcher(input);
