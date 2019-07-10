@@ -7,3 +7,22 @@ String s =textField.getText();
 					JOptionPane.showMessageDialog(frame,mes);
 				}
 cách 2 : dùng mô hình 3 lớp của  regEx : Parttern, macher, Exception
+                  String input ="abc";
+     String regEx ="abc";
+     // các định dang của điều kiện regEx
+     String regEx1 ="abc{3}";// yêu cầu text nhập vào là ki tự c xuất hiện 3 lần
+     String regEx2 ="a(bc){3}";// yêu cầu text nhập vào là ki tự bc xuất hiện 3 lần
+     String regEx3 ="a{3}bc";// yêu cầu text nhập vào là ki tự c xuất hiện 3 lần
+     try {
+		Pattern pattern = Pattern.compile(regEx);
+		Matcher matcher = pattern.matcher(input);
+		if(matcher.matches()) {
+			System.out.println("Hợp lệ");
+		}else {
+			System.out.println("Không hợp lệ");
+		}
+	} catch(PatternSyntaxException patternSyntaxException) {
+		System.out.println("Biểu thức RegEx không đúng");
+	}catch (Exception e) {
+		System.out.println("Lỗi :"+e);
+	}
