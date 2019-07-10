@@ -1,0 +1,33 @@
+import java.util.Date;
+import java.util.Locale;
+
+public class DiaPhuognHoa_number_date_tien {
+
+	public static void main(String[] args) {
+		
+		double so = 1432.45;
+		
+		// định dang  các nước
+		Locale localeVN = new Locale("vi", "VN");
+		Locale localeUS = new Locale("en", "US");
+	// đinh dạng số
+		NumberFormat nfUS = NumberFormat.getNumberInstance(localeUS);
+		NumberFormat nfVN = NumberFormat.getNumberInstance(localeVN);
+		System.out.println("so VN: "+nfVN.format(so));
+		System.out.println("so US: "+nfUS.format(so));
+	// đinh dạng date
+		Date date = new Date();
+		DateFormat dfVN = DateFormat.getDateInstance(DateFormat.SHORT, localeVN);
+		DateFormat dfUS = DateFormat.getDateInstance(DateFormat.SHORT, localeUS);
+		System.out.println("Ngày VN: "+dfVN.format(date));
+		System.out.println("Ngày US: "+dfUS.format(date));
+	// Định dạng tiền tệ trên double so = 1432.45;
+		NumberFormat nfTienVN = NumberFormat.getCurrencyInstance(localeVN);
+		NumberFormat nfTienUS = NumberFormat.getCurrencyInstance(localeUS);
+		System.out.println("Tiền VN : "+nfTienVN.format(so));
+		System.out.println("Tiền US : "+nfTienUS.format(so));
+		
+		
+	}
+
+}
