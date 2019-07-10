@@ -33,7 +33,7 @@ cách 2 : dùng mô hình 3 lớp của  regEx : Parttern, macher, Exception
       //
       //
       //
-      
+      // loai bo ky tu  [^\\s$#@^&*&*((] : ^ phủ định các //s -> ký tự trắng ,kí tự $......
      try {
 		Pattern pattern = Pattern.compile(regEx);
 		Matcher matcher = pattern.matcher(input);
